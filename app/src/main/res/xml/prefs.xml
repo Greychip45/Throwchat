@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:drawableStart="@drawable/ic_moon"
+        android:textAppearance="@style/toolbartext"
+        android:textColor="@color/black"
+        android:title="Chat">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_moon"
+            android:key="night"
+            android:summaryOff="Night mode is deactivated"
+            android:summaryOn="Night mode is activated"
+
+            android:title="Night Mode" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_rounded_corner"
+            android:key="corners"
+            android:summaryOff="Rounded corners disabled"
+            android:summaryOn="Rounded corners enabled"
+            android:title="Corners" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/items_name"
+            android:entryValues="@array/items_value"
+            android:icon="@drawable/ic_baseline_chat_bubble_24"
+            android:key="bubbles"
+            android:title="Chat Bubbles" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Root">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_login"
+            android:key="login"
+            android:summaryOff="You will be required to enter your crendetials every time you start the application"
+            android:summaryOn="You will be logged in automatically without entering your crendetials"
+            android:title="Stay Logged in" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

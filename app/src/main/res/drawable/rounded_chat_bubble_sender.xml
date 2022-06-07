@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:state_window_focused="false" android:state_focused="false">
+        <shape android:shape="rectangle">
+
+            <corners android:bottomLeftRadius="10dp"
+                android:bottomRightRadius="10dp"
+                android:topRightRadius="10dp"/>
+
+            <solid android:color="#EAE9ED"/>
+
+        </shape>
+    </item>
+
+
+
+</layer-list>

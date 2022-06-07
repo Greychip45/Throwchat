@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "646330680671",
+    "project_id": "friendsbook-c65cc",
+    "storage_bucket": "friendsbook-c65cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646330680671:android:1410bae62a2259242b62ea",
+        "android_client_info": {
+          "package_name": "com.example.friendsbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646330680671-t6m6v549kjqma715s5vpquc7fh0j3o8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvLduIdBOxhv8j2QtpIxdkk4ArSlplC-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646330680671-t6m6v549kjqma715s5vpquc7fh0j3o8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
