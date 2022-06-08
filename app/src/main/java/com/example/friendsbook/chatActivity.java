@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -42,6 +43,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -74,13 +77,15 @@ public class chatActivity extends AppCompatActivity {
     DatabaseReference reference;
 
 
-    TextView chatUserName,user_status;
+    TextInputLayout chatTextLayout;
+    TextView chatUserName,user_status,progress;
     ImageView viewBack,profilePic,textImage;
     EditText inputText;
-    Button btnSend,btnSelectImage;
+    FloatingActionButton btnSend;
 
     ChatAdapter chatAdapter;
     ArrayList<MessageModel> mModel;
+    ProgressBar progressBar;
 
     RecyclerView recyclerView;
     private Uri imgUrl;
@@ -107,6 +112,12 @@ public class chatActivity extends AppCompatActivity {
 
 
 
+        chatTextLayout = findViewById(R.id.chatTextLayout);
+
+
+        progressBar = findViewById(R.id.progressBar);
+        progress  = findViewById(R.id.txt_progress);
+
         textImage = findViewById(R.id.selectedLoadImage);
         recyclerView = findViewById(R.id.chatRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -118,7 +129,7 @@ public class chatActivity extends AppCompatActivity {
         inputText = findViewById(R.id.inputText);
         profilePic = findViewById(R.id.profilePic);
 
-        btnSelectImage = findViewById(R.id.btnSelectImage);
+
 
 
         receiverId = getIntent().getStringExtra("userId");
@@ -134,6 +145,17 @@ public class chatActivity extends AppCompatActivity {
 
 
         setStatus();
+
+        chatTextLayout.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImagePicker.Companion.with(chatActivity.this)
+                        .galleryOnly()
+                        .crop()
+                        .start();
+            }
+        });
+
         btnSend.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -144,25 +166,24 @@ public class chatActivity extends AppCompatActivity {
 
                 notify = true;
                 String msg = inputText.getText().toString();
+
+
+
                 if (!msg.equals("")) {
                     sendMessage(fuser.getUid(), receiverId, msg);
 
                     if(imgUrl != null){
+
                         sendImage();
+                        imgUrl = null;
                     }
+
                 }
                 typingStatus();
             }
         });
 
-        btnSelectImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ImagePicker.Companion.with(chatActivity.this)
-                        .galleryOnly()
-                        .start();
-            }
-        });
+
 
         inputText.addTextChangedListener(new TextWatcher() {
 
@@ -464,9 +485,15 @@ public class chatActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
+
+
                 fileReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
+
+                        progress.setVisibility(View.GONE);
+                        progressBar.setProgress(0);
+                        progressBar.setVisibility(View.GONE);
                         textImage.setVisibility(View.GONE);
                         String url = task.getResult().toString();
                         reference  = FirebaseDatabase.getInstance().getReference("Chats");
@@ -486,6 +513,11 @@ public class chatActivity extends AppCompatActivity {
             @Override
             public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
 
+                progress.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
+                double imgProgress = (100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+                progressBar.setProgress((int) imgProgress);
+                progress.setText((int) imgProgress+"%");
 
             }
         });

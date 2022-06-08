@@ -47,10 +47,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         String chatBubbleNum = sp.getString("bubbles", "false");
 
             if (viewType == SENDER_VIEW_TYPE) {
-                View view = LayoutInflater.from(context).inflate(R.layout.rounded_sample_sender, parent, false);
+                View view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_sender, parent, false);
                 return new ViewHolder(view);
             } else {
-                View view = LayoutInflater.from(context).inflate(R.layout.rounded_sample_receiver, parent, false);
+                View view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_receiver, parent, false);
                 return new ViewHolder(view);
             }
 

@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     Button btnRegister,btnSkip;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
+    TextInputLayout emailLayout,pwdLayout,cpwdlayout;
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
@@ -45,10 +50,59 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
+        emailLayout = findViewById(R.id.email_layout);
+        pwdLayout = findViewById(R.id.pwd_layout);
+        cpwdlayout = findViewById(R.id.cpwd_layout);
+
         btnSkip = findViewById(R.id.btnSkip);
         inputSignInEmail=findViewById(R.id.inputSignUpEmail);
         inputSignInPassword=findViewById(R.id.inputSignUpPassword);
         inputConfirmPassword=findViewById(R.id.inputConfirmPassword);
+
+        inputSignInEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                emailLayout.setErrorEnabled(false);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                emailLayout.setErrorEnabled(false);
+            }
+        });
+
+        inputSignInPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                cpwdlayout.setErrorEnabled(false);
+                pwdLayout.setErrorEnabled(false);
+
+                inputConfirmPassword.setText("");
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
 
         btnRegister=findViewById(R.id.btnRegister);
         progressDialog= new ProgressDialog(this);
@@ -94,16 +148,17 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         if(!email.matches(emailPattern)) {
-            inputSignInEmail.setError("Invalid Email");
+            emailLayout.setError("Invalid Email");
 
         } else if(password.isEmpty() || password.length()<6 ) {
-            inputSignInPassword.setError("Password should be six characters");
+            pwdLayout.setError("Password should be six characters");
+
 
         } else if(confirmPassword.length()<6) {
-            inputSignInPassword.setError("Password should be six characters");
+            pwdLayout.setError("Password should be six characters");
         } else if(!confirmPassword.equals(password)) {
-            inputSignInPassword.setError("");
-            inputConfirmPassword.setError("");
+            pwdLayout.setError("Password do not match");
+            cpwdlayout.setError("Password do not match");
 
 
         } else {

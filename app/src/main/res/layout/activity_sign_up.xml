@@ -73,7 +73,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+        app:layout_constraintTop_toBottomOf="@+id/cpwd_layout" />
 
     <Button
         android:id="@+id/btnSkip"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
+        android:id="@+id/email_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
         android:animateLayoutChanges="false"
         android:animationCache="false"
         app:boxStrokeColor="@color/black"
-        app:errorEnabled="false"
+        app:errorEnabled="true"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,12 +122,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
+        android:id="@+id/pwd_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:alwaysDrawnWithCache="false"
         android:animateLayoutChanges="false"
@@ -136,12 +135,12 @@
         app:counterEnabled="true"
         app:counterMaxLength="6"
         app:endIconMode="password_toggle"
-        app:errorEnabled="false"
+        app:errorEnabled="true"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/email_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputSignUpPassword"
@@ -153,7 +152,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
+        android:id="@+id/cpwd_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -164,12 +163,12 @@
         app:counterEnabled="true"
         app:counterMaxLength="6"
         app:endIconMode="password_toggle"
-        app:errorEnabled="false"
+        app:errorEnabled="true"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/pwd_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputConfirmPassword"
