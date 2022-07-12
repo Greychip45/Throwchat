@@ -54,7 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         pwdLayout = findViewById(R.id.pwd_layout);
         cpwdlayout = findViewById(R.id.cpwd_layout);
 
-        btnSkip = findViewById(R.id.btnSkip);
+
         inputSignInEmail=findViewById(R.id.inputSignUpEmail);
         inputSignInPassword=findViewById(R.id.inputSignUpPassword);
         inputConfirmPassword=findViewById(R.id.inputConfirmPassword);

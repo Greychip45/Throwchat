@@ -3,6 +3,7 @@ package com.example.friendsbook.Adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -10,15 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.friendsbook.Models.MessageModel;
+import com.example.friendsbook.PreviewActivity;
 import com.example.friendsbook.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -46,13 +49,13 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
         String chatBubbleNum = sp.getString("bubbles", "false");
 
-            if (viewType == SENDER_VIEW_TYPE) {
-                View view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_sender, parent, false);
-                return new ViewHolder(view);
-            } else {
-                View view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_receiver, parent, false);
-                return new ViewHolder(view);
-            }
+        View view;
+        if (viewType == SENDER_VIEW_TYPE) {
+            view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_sender, parent, false);
+        } else {
+            view = LayoutInflater.from(context).inflate(R.layout.card_chat_item_receiver, parent, false);
+        }
+        return new ViewHolder(view);
 
     }
 
@@ -82,11 +85,23 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         if(!messageModel.getImgUrl().equals("")){
 
             holder.textImage.setVisibility(View.VISIBLE);
-            Picasso.get().load(messageModel.getImgUrl()).placeholder(R.drawable.empty_image).into(holder.textImage);
 
-        }else{
-
+            Glide.with(context)
+                    .load(messageModel.getImgUrl())
+                    .placeholder(R.drawable.empty_image)
+                    .centerCrop()
+                    .into(holder.textImage);
         }
+
+        holder.textImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, PreviewActivity.class);
+                i.putExtra("imgUrl",messageModel.getImgUrl());
+                context.startActivity(i);
+
+            }
+        });
 
         
 

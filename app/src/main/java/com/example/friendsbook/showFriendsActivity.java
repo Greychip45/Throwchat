@@ -55,9 +55,9 @@ public class showFriendsActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new friendsFragment(), "FRIENDS");
-        vpAdapter.addFragment(new addFriendFragment(), "ADD FRIEND");
 
+        vpAdapter.addFragment(new friendsFragment(),"FRIENDS");
+        vpAdapter.addFragment(new addFriendFragment(),"ADD FRIEND");
         viewPager.setAdapter(vpAdapter);
     }
     private void sendUserToNextActivity() {
@@ -99,6 +99,7 @@ public class showFriendsActivity extends AppCompatActivity {
         friendsActivityBackground = findViewById(R.id.friendsActivityBackground);
 
         if (check_night) {
+
             friendsActivityBackground.setImageDrawable(getDrawable(R.drawable.viewpager_dark_background));
 
         } else {

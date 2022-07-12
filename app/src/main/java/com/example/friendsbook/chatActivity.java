@@ -3,6 +3,7 @@ package com.example.friendsbook;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.example.friendsbook.Adapters.ChatAdapter;
 
 
@@ -79,10 +81,11 @@ public class chatActivity extends AppCompatActivity {
 
     TextInputLayout chatTextLayout;
     TextView chatUserName,user_status,progress;
-    ImageView viewBack,profilePic,textImage;
+    ImageView viewBack,profilePic,textImage,cancelBtn;
     EditText inputText;
     FloatingActionButton btnSend;
 
+    CardView imageCardView;
     ChatAdapter chatAdapter;
     ArrayList<MessageModel> mModel;
     ProgressBar progressBar;
@@ -118,6 +121,9 @@ public class chatActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         progress  = findViewById(R.id.txt_progress);
 
+        user_status = findViewById(R.id.user_status);
+        imageCardView = findViewById(R.id.imageCardView);
+        cancelBtn = findViewById(R.id.btn_cancel);
         textImage = findViewById(R.id.selectedLoadImage);
         recyclerView = findViewById(R.id.chatRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -144,6 +150,7 @@ public class chatActivity extends AppCompatActivity {
 
 
 
+        cancelBtn.setVisibility(View.GONE);
         setStatus();
 
         chatTextLayout.setEndIconOnClickListener(new View.OnClickListener() {
@@ -183,6 +190,14 @@ public class chatActivity extends AppCompatActivity {
             }
         });
 
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textImage.setVisibility(View.GONE);
+                imgUrl = null;
+                cancelBtn.setVisibility(View.GONE);
+            }
+        });
 
 
         inputText.addTextChangedListener(new TextWatcher() {
@@ -409,13 +424,24 @@ public class chatActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                user_status = findViewById(R.id.user_status);
+
 
                     Users users = snapshot.getValue(Users.class);
                     String status = users.getStatus();
-                    Picasso.get().load(users.getProfileUrl()).placeholder(R.drawable.user12).into(profilePic);
 
+                Glide.with(chatActivity.this)
+                        .load(users.getProfileUrl())
+                        .placeholder(R.drawable.user12)
+                        .centerCrop()
+                        .into(profilePic);
+
+                if(!status.equalsIgnoreCase("offline")){
+                    user_status.setVisibility(View.VISIBLE);
                     user_status.setText(status);
+                } else{
+                    user_status.setVisibility(View.GONE);
+                }
+
 
 
 
@@ -494,12 +520,13 @@ public class chatActivity extends AppCompatActivity {
                         progress.setVisibility(View.GONE);
                         progressBar.setProgress(0);
                         progressBar.setVisibility(View.GONE);
-                        textImage.setVisibility(View.GONE);
+                        imageCardView.setVisibility(View.GONE);
                         String url = task.getResult().toString();
                         reference  = FirebaseDatabase.getInstance().getReference("Chats");
                         HashMap<String,Object> hashMap = new HashMap<>();
                         hashMap.put("imgUrl",url);
                         reference.child(dbKey).updateChildren(hashMap);
+
 
                     }
                 });
@@ -529,7 +556,8 @@ public class chatActivity extends AppCompatActivity {
 
         imgUrl = data.getData();
         if(imgUrl != null){
-            textImage.setVisibility(View.VISIBLE);
+            cancelBtn.setVisibility(View.VISIBLE);
+            imageCardView.setVisibility(View.VISIBLE);
             Picasso.get().load(imgUrl).into(textImage);
         }
 

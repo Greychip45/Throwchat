@@ -37,9 +37,9 @@ import java.util.HashMap;
 import retrofit2.http.Url;
 
 public class InfoActivity extends AppCompatActivity {
-    EditText inputName,inputPhone;
+    EditText inputName,inputPhone,inputBio;
     Button btn_next;
-    FloatingActionButton floatingBtn;
+    ImageView circleImageView;
     ProgressDialog progressDialog;
     ImageView profileImage;
 
@@ -60,8 +60,9 @@ public class InfoActivity extends AppCompatActivity {
         inputPhone=findViewById(R.id.txt_phone);
         inputName=findViewById(R.id.txt_name);
         progressDialog= new ProgressDialog(this);
-        floatingBtn = findViewById(R.id.floating_btn);
+        circleImageView = findViewById(R.id.circleImageView);
         profileImage = findViewById(R.id.circleImageView);
+        inputBio = findViewById(R.id.txt_bio);
 
 
         btn_next = findViewById(R.id.btn_next);
@@ -89,7 +90,7 @@ public class InfoActivity extends AppCompatActivity {
 
             }
         });
-        floatingBtn.setOnClickListener(new View.OnClickListener() {
+        circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -111,15 +112,15 @@ public class InfoActivity extends AppCompatActivity {
 
         String name = inputName.getText().toString();
         String phone = inputPhone.getText().toString();
-
         String email = getIntent().getStringExtra("inputEmail");
+        String bio = inputBio.getText().toString();
 
 
 
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
         String chatId = fuser.getUid();
-        CreateUsers users = new CreateUsers(name,phone,chatId,email);
+        CreateUsers users = new CreateUsers(name,phone,chatId,email,bio);
 
 
         studentDbRef.child(chatId).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -1,11 +1,11 @@
 package com.example.friendsbook.Models;
 
 public class Users {
-    String profileUrl, name, lastMessage, userId, email, phone,chatId,status;
+    String profileUrl, name, lastMessage, userId, email, phone,chatId,status,bio;
 
 
 
-    public Users(String profileUrl, String name, String lastMessage, String userId, String email, String phone,String chatId,String status) {
+    public Users(String profileUrl, String name, String lastMessage, String userId, String email, String phone,String chatId,String status,String bio) {
         this.profileUrl = profileUrl;
         this.name = name;
         this.lastMessage = lastMessage;
@@ -14,6 +14,15 @@ public class Users {
         this.phone = phone;
         this.chatId = chatId;
         this.status = status;
+        this.bio = bio;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public String getStatus() {

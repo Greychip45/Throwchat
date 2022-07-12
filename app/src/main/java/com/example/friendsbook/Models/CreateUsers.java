@@ -4,15 +4,16 @@ import com.example.friendsbook.Models.Users;
 
 public class CreateUsers extends Users {
 
-    String name,phone,chatId,email;
+    String name,phone,chatId,email,bio;
 
-    public CreateUsers(String name, String phone, String chatId, String email) {
+    public CreateUsers(String name, String phone, String chatId, String email,String bio) {
 
 
         this.email = email;
         this.chatId = chatId;
         this.name = name;
         this.phone = phone;
+        this.bio = bio;
     }
 
     @Override
@@ -43,6 +44,16 @@ public class CreateUsers extends Users {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getBio() {
+        return bio;
+    }
+
+    @Override
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public String getPhone() {

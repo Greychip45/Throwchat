@@ -17,11 +17,15 @@
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/bc_send_btn.xml" value="0.115" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/bg_incoming_message.xml" value="0.2945" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/bg_outgoing_message.xml" value="0.1995" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/comment_bg.xml" value="0.1115" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/dev_message_bg.xml" value="0.1405" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_account.xml" value="0.1075" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_back.xml" value="0.284" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.1845" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.1405" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_camera.xml" value="0.1975" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_comment.xml" value="0.1105" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_download.xml" value="0.1385" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_email.xml" value="0.1075" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_forward.xml" value="0.1075" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_lock.xml" value="0.1075" />
@@ -30,25 +34,31 @@
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_send.xml" value="0.1835" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_smiley_emoji.xml" value="0.1325" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ic_vert.xml" value="0.1025" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/meme_btns.xml" value="0.167" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/ripple_effect_raised.xml" value="0.3135" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/rounded_chat_bubble_receiver.xml" value="0.151" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/rounded_chat_bubble_sender.xml" value="0.1575" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/sample_receiver.xml" value="0.147" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/sample_sender.xml" value="0.147" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/show_user_bg.xml" value="0.1405" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/user_clicked_ripple.xml" value="0.133" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/viewpager_background.xml" value="0.2875" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/drawable/viewpager_dark_background.xml" value="0.1075" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout-w1240dp/advanced_user.xml" value="0.1296875" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout-w1240dp/test_rounded_sender.xml" value="0.10546875" />
-        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_chat.xml" value="0.496551724137931" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_chat.xml" value="0.5" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_comments.xml" value="0.4238921001926782" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_developer_message.xml" value="0.26135310472659873" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_fragement.xml" value="0.25301204819277107" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_fragment.xml" value="0.25301204819277107" />
-        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_info.xml" value="0.33" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_login.xml" value="0.23262279888785914" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_preview.xml" value="0.33" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_send_image.xml" value="0.25023169601482853" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_settings.xml" value="0.23262279888785914" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_setup_profile.xml" value="0.33" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_show_friends.xml" value="0.24324324324324326" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_test_fragment.xml" value="0.25301204819277107" />
@@ -57,7 +67,8 @@
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/activity_texting.xml" value="0.25301204819277107" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/background_edit_text.xml" value="0.1641337386018237" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/card_chat_item_receiver.xml" value="0.5" />
-        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/card_chat_item_sender.xml" value="0.67" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/card_chat_item_sender.xml" value="0.5" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/comment_view.xml" value="0.5" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/example_user.xml" value="0.5" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_add_friend.xml" value="0.1827956989247312" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_callsfragment.xml" value="0.1" />
@@ -67,12 +78,15 @@
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_test_sign_up.xml" value="0.25301204819277107" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_testing.xml" value="0.2736212056434374" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_timelinefragment.xml" value="0.23540315106580167" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/fragment_update_pofile.xml" value="0.2692656391659112" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/meme_preview.xml" value="0.33" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/popup_dialog.xml" value="0.27353313634444915" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/rounded_sample_receiver.xml" value="0.67" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/rounded_sample_sender.xml" value="0.67" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/sample_receiver.xml" value="0.5978947368421053" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/sample_sender.xml" value="0.5" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/sender_bubble.xml" value="0.24003707136237257" />
-        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/show_advanced_user.xml" value="0.4748201438848921" />
+        <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/show_advanced_user.xml" value="0.5" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/show_dev_message.xml" value="0.26135310472659873" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/show_settings.xml" value="0.33" />
         <entry key="..\:/Users/Grey/AndroidStudioProjects/FriendsBook/app/src/main/res/layout/show_user.xml" value="0.5" />

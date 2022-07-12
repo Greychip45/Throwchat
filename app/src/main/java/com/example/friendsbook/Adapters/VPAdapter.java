@@ -28,9 +28,10 @@ public class VPAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentArrayList.size();
     }
-    public void addFragment(Fragment fragment, String title){
+    public void addFragment(Fragment fragment,String title){
         fragmentArrayList.add(fragment);
         fragmentTitle.add(title);
+
 
     }
 
